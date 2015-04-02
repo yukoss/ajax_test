@@ -1,0 +1,87 @@
+
+@import "normalize"
+@import "reset"
+
+$color-1: #5f9ea0
+
+@mixin b-radius
+  border-bottom-left-radius: 10px
+  border-top-left-radius: 10px
+
+/*=======================================================*/
+
+*
+  box-sizing: border-box
+
+@-webkit-keyframes error
+  25%
+  	opacity: 1
+
+  50%
+  	color: #f00
+
+@-webkit-keyframes success
+  25%
+    opacity: 1
+
+  50%
+    color: #0f0
+
+body
+  max-width: 100%
+  max-height: 100%
+  width: auto
+  height: auto
+  background: url(../images/bg.jpg) fixed
+  background-size: cover
+  color: #fff
+
+.wrapper
+  position: relative
+  margin: 0 auto
+  width: 960px
+  height: 100vh
+  background-color: #fff
+  a
+    display: block
+    position: absolute
+    top: 50%
+    left: 50%
+    margin: -39px 0 0 -111px
+    padding: 30px 40px
+    background-color: $color-1
+    color: #fff
+    background-image: linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.3), rgba(255,255,255,.0) 70%)
+    background-repeat: no-repeat
+    background-size: 200% 100%, auto
+    background-position: 200% 0, 0 0
+    box-shadow: rgba(0,0,0,.3) 0 2px 5px
+    &:hover
+      transition: 0.8s linear
+      background-position: -200% 0, 0 0
+
+.success, .error
+  display: none
+  position: absolute
+  top: 50%
+  left: 50%
+  margin: -155px 0 0 -155px
+  padding: 100px 0 0
+  width: 300px
+  height: 300px
+  background-color: $color-1
+  border-radius: 10px
+  text-align: center
+
+span
+  font-size: 60px
+  font-weight: bold
+
+.success span
+  -webkit-animation: success 2s linear infinite
+
+.error span
+  -webkit-animation: error 2s linear infinite
+  
+.download
+  display: none
